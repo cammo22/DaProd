@@ -1,0 +1,49 @@
+{
+  "name": "daprod-creazioni",
+  "version": "0.1.0",
+  "description": "DaProdCreazioni — AI story and prompt generator for WanGP video production",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder --win",
+    "build:dir": "electron-builder --win --dir"
+  },
+  "build": {
+    "appId": "com.daprod.creazioni",
+    "productName": "DaProdCreazioni",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": null
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "DaProdCreazioni"
+    }
+  },
+  "devDependencies": {
+    "electron": "^36.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "dependencies": {
+    "electron-store": "^10.0.0"
+  }
+}
